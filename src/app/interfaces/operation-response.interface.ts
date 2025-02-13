@@ -1,4 +1,4 @@
-// vai tipar a interface que representa o objeto/operação 
+// vai tipar a interface que representa o objeto/operação
 // do mocks/operations-list-response.mock.ts
 
 export interface IOperationResponse {
@@ -6,5 +6,5 @@ export interface IOperationResponse {
     customerStatus: number;
     operationDate: string;
     operationValue: number;
-    operationRisck: number;
+    operationRisk: number;
 }
