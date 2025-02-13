@@ -1,6 +1,8 @@
 // Vai simular um response de chamada http
 
-export const OperationsListResponseMock = [
+import { OperationsListResponse } from "../types/operations-list-response.type";
+
+export const OperationsListResponseMock: OperationsListResponse = [
     {
       customerName: 'João',
       customerStatus: 1,
