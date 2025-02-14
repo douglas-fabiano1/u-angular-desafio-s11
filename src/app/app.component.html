@@ -4,6 +4,7 @@
       class="operations__filter-input"
       type="text"
       placeholder="Filtrar por Nome"
+      [(ngModel)]="searchTerm"
     />
   </div>
   <div class="operations__table">
@@ -31,7 +32,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let operation of operationsList">
+        <tr
+          *ngFor="
+            let operation of operationsList
+              | filter : 'customerName' : searchTerm
+          "
+        >
           <td class="operations__table-cell">{{ operation.customerName }}</td>
           <td class="operations__table-cell">
             <p class="operations__status">

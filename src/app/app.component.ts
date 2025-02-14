@@ -8,12 +8,13 @@ import { take } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
+  searchTerm: string = '';
   operationsList: OperationsListResponse = [];
 
   constructor(
     private readonly _operationsService: OperationsService
-  ){}
+  ) { }
 
   ngOnInit() {
     this.getOperations();
@@ -21,9 +22,9 @@ export class AppComponent implements OnInit{
 
   getOperations() {
     this._operationsService.getOperations()
-    .pipe(take(1))
-    .subscribe((operationsListResponse) => {
-      this.operationsList = operationsListResponse;
-    });
+      .pipe(take(1))
+      .subscribe((operationsListResponse) => {
+        this.operationsList = operationsListResponse;
+      });
   }
 }

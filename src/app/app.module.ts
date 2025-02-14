@@ -1,9 +1,11 @@
 import { NgModule, LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { StatusPipe } from './pipes/status.pipe';
-import { StatusIcon } from './pipes/status-icon.pipe';
+import { StatusIconPipe } from './pipes/status-icon.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -11,8 +13,8 @@ import { registerLocaleData } from '@angular/common';
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
-  declarations: [AppComponent, StatusPipe, StatusIcon],
-  imports: [BrowserModule],
+  declarations: [AppComponent, StatusPipe, StatusIconPipe, FilterPipe],
+  imports: [BrowserModule, FormsModule],
   providers: [
     {
       provide: LOCALE_ID,
@@ -25,4 +27,4 @@ registerLocaleData(localePt, 'pt-BR');
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
