@@ -34,7 +34,8 @@
       <tbody>
         <tr
           *ngFor="
-            let operation of operationsList
+            let operation of operationsList$
+              | async
               | filter : 'customerName' : searchTerm
           "
         >
